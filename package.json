@@ -1,0 +1,11 @@
+{
+    "name": "com.yothuba.ycustomplayables",
+    "version": "1.0.0",
+    "displayName": "YCustomPlayables",
+    "unity": "2019.1",
+    "description": "This Package is any scriptPlayables",
+    "author":{
+        "name":"Yothuba",
+        "email": "yothuba.10@gmail.com"
+    }
+}
