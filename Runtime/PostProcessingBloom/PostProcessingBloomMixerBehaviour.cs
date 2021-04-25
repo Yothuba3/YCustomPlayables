@@ -15,9 +15,12 @@ namespace yothuba.ycustomplayables
             PostProcessVolume trackBinding = playerData as PostProcessVolume;
             float findIntensity = 0f;
             float findThreashold = 0f;
-            var bloom = trackBinding.profile.GetSetting<Bloom>();
 
-            if (!trackBinding || !bloom)
+            if (!trackBinding)
+                return;
+
+            var bloom = trackBinding.profile.GetSetting<Bloom>();
+            if(!bloom)
                 return;
 
             int inputCount = playable.GetInputCount();
@@ -35,7 +38,7 @@ namespace yothuba.ycustomplayables
 
             bloom.intensity.Override(findIntensity);
             bloom.threshold.Override(findThreashold);
-            PostProcessManager.instance.QuickVolume(6, 1, bloom);
+            PostProcessManager.instance.QuickVolume(trackBinding.gameObject.layer,1, bloom);
         }
     }
 }
